@@ -5,21 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
-
-    Button btn_jump_aboutUs;
+public class AboutUs extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        btn_jump_aboutUs = findViewById(R.id.btn_aboutUs);
+        setContentView(R.layout.activity_about_us);
     }
 
-    public void jumpToAboutUs(View V){
-        Intent intent = new Intent(MainActivity.this, AboutUs.class);
+    public void jumpToMainMenu (View v){
+        Intent intent = new Intent(AboutUs.this, MainActivity.class);
         startActivity(intent);
     }
 }
