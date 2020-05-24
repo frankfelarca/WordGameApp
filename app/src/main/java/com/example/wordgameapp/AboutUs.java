@@ -16,7 +16,5 @@ public class AboutUs extends AppCompatActivity {
 
     public void jumpToMainMenu (View v){
         finish();
-        //pektus
-        //sadasd
     }
 }
