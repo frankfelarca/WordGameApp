@@ -13,5 +13,6 @@ public class CatalystFadeIn extends AppCompatActivity {
         setContentView(R.layout.activity_catalyst_fade_in);
         Intent intent = new Intent(CatalystFadeIn.this, SplashScreen.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }
 }
