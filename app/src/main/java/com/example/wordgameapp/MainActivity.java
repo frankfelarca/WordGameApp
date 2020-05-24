@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btn_jump_aboutUs = findViewById(R.id.btn_aboutUs);
+        //hello
     }
 
     public void jumpToAboutUs(View V){
