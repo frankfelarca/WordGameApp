@@ -24,5 +24,5 @@ public class MainActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         //betlog
 
-    }
+    }//penes
 }
