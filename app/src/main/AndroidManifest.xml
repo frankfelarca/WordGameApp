@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/customTheme1">
-        <activity android:name=".EasyDifficulty"></activity>
+        <activity android:name=".Results"></activity>
+        <activity android:name=".EasyDifficulty" />
         <activity android:name=".CatalystFadeIn">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,8 +21,7 @@
         <activity android:name=".AboutUs" />
         <activity
             android:name=".SplashScreen"
-            android:theme="@style/SplashTheme">
-        </activity>
+            android:theme="@style/SplashTheme"></activity>
         <activity android:name=".MainActivity">
 
             <!-- <intent-filter> -->
