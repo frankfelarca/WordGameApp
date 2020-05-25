@@ -9,19 +9,19 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn_jump_aboutUs;
+    Button btnAboutUs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btn_jump_aboutUs = findViewById(R.id.btn_aboutUs);
-        //hello
-    }
-
-    public void jumpToAboutUs(View V){
-        Intent intent = new Intent(MainActivity.this, AboutUs.class);
-        startActivity(intent);
-        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        btnAboutUs = findViewById(R.id.btnAboutUs);
+        btnAboutUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AboutUs.class);
+                startActivity(intent);
+            }
+        });
     }
 }

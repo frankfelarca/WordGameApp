@@ -33,7 +33,7 @@
         android:layout_height="120dp"
         android:layout_marginEnd="36dp"
         android:layout_marginBottom="68dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_return"
+        app:layout_constraintBottom_toTopOf="@+id/btnBack"
         app:layout_constraintEnd_toEndOf="parent"
         tools:srcCompat="@drawable/a" />
 
@@ -48,12 +48,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_return"
+        android:id="@+id/btnBack"
         android:layout_width="106dp"
         android:layout_height="59dp"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="44dp"
-        android:onClick="jumpToMainMenu"
         android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
