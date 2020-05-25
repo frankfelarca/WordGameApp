@@ -7,6 +7,15 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/btnHard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:text="Hard"
+        app:layout_constraintStart_toStartOf="@+id/btnAverage"
+        app:layout_constraintTop_toBottomOf="@+id/btnAverage" />
+
+    <Button
         android:id="@+id/btnAboutUs"
         android:layout_width="106dp"
         android:layout_height="62dp"
@@ -27,6 +36,7 @@
         app:layout_constraintVertical_bias="0.428"
         app:srcCompat="@drawable/litaf" />
 
+
     <TextView
         android:id="@+id/tvTitleText"
         android:layout_width="262dp"
@@ -37,5 +47,25 @@
         android:textSize="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnEasy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="25dp"
+        android:text="Easy"
+        app:layout_constraintBottom_toTopOf="@+id/btnAverage"
+        app:layout_constraintStart_toStartOf="@+id/btnAverage" />
+
+    <Button
+        android:id="@+id/btnAverage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="67dp"
+        android:text="Average"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
