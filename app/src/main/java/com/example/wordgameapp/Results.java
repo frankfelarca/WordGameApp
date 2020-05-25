@@ -11,10 +11,11 @@ import android.widget.TextView;
 public class Results extends AppCompatActivity {
 
     Button btnBack;
-    TextView tvAnswer1, tvAnswer2, tvAnswer3, tvAnswer4, tvFinalScore, tvFinalTime;
+    TextView tvAnswer1, tvAnswer2, tvAnswer3, tvAnswer4, tvAnswer5,  tvAnswer6, tvAnswer7, tvAnswer8, tvAnswer9, tvAnswer10, tvFinalScore, tvFinalTime;
     int score;
+    int total;
     String time;
-    String[] correctAnswers = new String[4];
+    String[] correctAnswers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,12 @@ public class Results extends AppCompatActivity {
         tvAnswer2 = findViewById(R.id.tvAnswer2);
         tvAnswer3 = findViewById(R.id.tvAnswer3);
         tvAnswer4 = findViewById(R.id.tvAnswer4);
+        tvAnswer5 = findViewById(R.id.tvAnswer5);
+        tvAnswer6 = findViewById(R.id.tvAnswer6);
+        tvAnswer7 = findViewById(R.id.tvAnswer7);
+        tvAnswer8 = findViewById(R.id.tvAnswer8);
+        tvAnswer9 = findViewById(R.id.tvAnswer9);
+        tvAnswer10 = findViewById(R.id.tvAnswer10);
         tvFinalScore = findViewById(R.id.tvFinalScore);
         tvFinalTime = findViewById(R.id.tvFinalTime);
         btnBack = findViewById(R.id.btnBack);
@@ -37,19 +44,18 @@ public class Results extends AppCompatActivity {
         });
 
         Intent intent = getIntent();
-        correctAnswers = intent.getStringArrayExtra("correctWords");
-        score = intent.getIntExtra("score", score);
+        score = intent.getIntExtra("score", 0);
         time = intent.getStringExtra("time");
+        total = intent.getIntExtra("total", 0);
+        correctAnswers = new String[total];
+        correctAnswers = intent.getStringArrayExtra("correctWords");
+        TextView[] tvArray = {tvAnswer1, tvAnswer2, tvAnswer3, tvAnswer4, tvAnswer5,  tvAnswer6, tvAnswer7, tvAnswer8, tvAnswer9, tvAnswer10};
 
+        for(int i = 0; i < total; i++){
+            tvArray[i].setText(correctAnswers[i]);
+        }
 
-
-        tvAnswer1.setText(correctAnswers[0]);
-        tvAnswer2.setText(correctAnswers[1]);
-        tvAnswer3.setText(correctAnswers[2]);
-        tvAnswer4.setText(correctAnswers[3]);
-
-
-        tvFinalScore.setText("Final Score: " + score + "/4");
+        tvFinalScore.setText("Final Score: " + score + "/" + total);
         tvFinalTime.setText("Final Time: " + time);
 
 

@@ -12,6 +12,12 @@ public class AboutUs extends AppCompatActivity {
     Button btnBack;
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
@@ -20,8 +26,6 @@ public class AboutUs extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AboutUs.this, MainActivity.class);
-                startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 finish();
             }

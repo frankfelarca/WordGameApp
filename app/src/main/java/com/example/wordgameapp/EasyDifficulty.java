@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Random;
 
@@ -17,11 +16,17 @@ public class EasyDifficulty extends AppCompatActivity {
     TextView tvScore;
     Button btn1 , btn2 , btn3 , btn4 , btn5 , btn6 , btn7 , btn8;
     Chronometer chronometer;
-    String[][] array;
     Random random = new Random();
-    int score;
+    String[][] array;
     String[] correctWords = new String[4];
     String time;
+    int score;
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +57,8 @@ public class EasyDifficulty extends AppCompatActivity {
                 checkAnswer(btn1);
                 btn3.setVisibility(View.VISIBLE);
                 btn4.setVisibility(View.VISIBLE);
+                btn1.setEnabled(false);
+                btn2.setEnabled(false);
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +67,8 @@ public class EasyDifficulty extends AppCompatActivity {
                 checkAnswer(btn2);
                 btn3.setVisibility(View.VISIBLE);
                 btn4.setVisibility(View.VISIBLE);
+                btn1.setEnabled(false);
+                btn2.setEnabled(false);
             }
         });
         btn3.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +77,8 @@ public class EasyDifficulty extends AppCompatActivity {
                 checkAnswer(btn3);
                 btn5.setVisibility(View.VISIBLE);
                 btn6.setVisibility(View.VISIBLE);
+                btn3.setEnabled(false);
+                btn4.setEnabled(false);
             }
         });
         btn4.setOnClickListener(new View.OnClickListener() {
@@ -75,7 +86,9 @@ public class EasyDifficulty extends AppCompatActivity {
             public void onClick(View v) {
                 checkAnswer(btn4);
                 btn5.setVisibility(View.VISIBLE);
-                btn6.setVisibility(View.VISIBLE);;
+                btn6.setVisibility(View.VISIBLE);
+                btn3.setEnabled(false);
+                btn4.setEnabled(false);
             }
         });
         btn5.setOnClickListener(new View.OnClickListener() {
@@ -84,6 +97,8 @@ public class EasyDifficulty extends AppCompatActivity {
                 checkAnswer(btn5);
                 btn7.setVisibility(View.VISIBLE);
                 btn8.setVisibility(View.VISIBLE);
+                btn5.setEnabled(false);
+                btn6.setEnabled(false);
             }
         });
         btn6.setOnClickListener(new View.OnClickListener() {
@@ -92,6 +107,8 @@ public class EasyDifficulty extends AppCompatActivity {
                 checkAnswer(btn6);
                 btn7.setVisibility(View.VISIBLE);
                 btn8.setVisibility(View.VISIBLE);
+                btn5.setEnabled(false);
+                btn6.setEnabled(false);
             }
         });
         btn7.setOnClickListener(new View.OnClickListener() {
@@ -104,6 +121,7 @@ public class EasyDifficulty extends AppCompatActivity {
                 intent.putExtra("correctWords", correctWords);
                 intent.putExtra("time", time);
                 intent.putExtra("score", score);
+                intent.putExtra("total", 4);
                 startActivity(intent);
                 finish();
             }
@@ -118,6 +136,7 @@ public class EasyDifficulty extends AppCompatActivity {
                 intent.putExtra("correctWords", correctWords);
                 intent.putExtra("time", time);
                 intent.putExtra("score", score);
+                intent.putExtra("total", 4);
                 startActivity(intent);
                 finish();
             }

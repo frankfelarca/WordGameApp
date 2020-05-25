@@ -12,10 +12,6 @@ public class SplashScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        MediaPlayer musicPlayer = MediaPlayer.create(this, R.raw.terrariajourneysendrelogic2);
-        musicPlayer.start();
-
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -24,6 +20,6 @@ public class SplashScreen extends AppCompatActivity {
                 //overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 finish();
             }
-        }, 0);
+        }, 2000);
     }
 }

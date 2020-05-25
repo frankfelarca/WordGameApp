@@ -12,11 +12,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="495dp"
         android:text="Correct Spelling:"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/tvAnswer1"
+        app:layout_constraintBottom_toTopOf="@+id/btnBack"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,9 +23,9 @@
         android:id="@+id/tvAnswer1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:layout_marginTop="10dp"
+        android:textAlignment="textEnd"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/tvAnswer2"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -34,9 +33,8 @@
         android:id="@+id/tvAnswer2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:textAlignment="textEnd"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/tvAnswer3"
         app:layout_constraintStart_toStartOf="@+id/tvAnswer1"
         app:layout_constraintTop_toBottomOf="@+id/tvAnswer1" />
 
@@ -44,9 +42,8 @@
         android:id="@+id/tvAnswer3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:textAlignment="textEnd"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/tvAnswer4"
         app:layout_constraintStart_toStartOf="@+id/tvAnswer2"
         app:layout_constraintTop_toBottomOf="@+id/tvAnswer2" />
 
@@ -54,10 +51,8 @@
         android:id="@+id/tvAnswer4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="61dp"
-        android:text="TextView"
+        android:textAlignment="textEnd"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/tvFinalScore"
         app:layout_constraintStart_toStartOf="@+id/tvAnswer3"
         app:layout_constraintTop_toBottomOf="@+id/tvAnswer3" />
 
@@ -66,35 +61,89 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginTop="36dp"
         android:text="TextView"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/tvFinalTime"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAnswer4" />
+        app:layout_constraintTop_toBottomOf="@+id/tvAnswer10" />
 
     <TextView
         android:id="@+id/tvFinalTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginBottom="133dp"
+        android:layout_marginTop="16dp"
         android:text="TextView"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnBack"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvFinalScore"
         app:layout_constraintTop_toBottomOf="@+id/tvFinalScore" />
 
     <Button
         android:id="@+id/btnBack"
-        android:layout_width="196dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="37dp"
-        android:layout_marginBottom="55dp"
+        android:layout_width="208dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginEnd="16dp"
         android:text="BACK"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFinalTime" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tvFinalTime"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.972" />
+
+    <TextView
+        android:id="@+id/tvAnswer5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/tvAnswer4"
+        app:layout_constraintTop_toBottomOf="@+id/tvAnswer4" />
+
+    <TextView
+        android:id="@+id/tvAnswer6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/tvAnswer5"
+        app:layout_constraintTop_toBottomOf="@+id/tvAnswer5" />
+
+    <TextView
+        android:id="@+id/tvAnswer10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/tvAnswer9"
+        app:layout_constraintTop_toBottomOf="@+id/tvAnswer9" />
+
+    <TextView
+        android:id="@+id/tvAnswer8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/tvAnswer7"
+        app:layout_constraintTop_toBottomOf="@+id/tvAnswer7" />
+
+    <TextView
+        android:id="@+id/tvAnswer7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/tvAnswer6"
+        app:layout_constraintTop_toBottomOf="@+id/tvAnswer6" />
+
+    <TextView
+        android:id="@+id/tvAnswer9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/tvAnswer8"
+        app:layout_constraintTop_toBottomOf="@+id/tvAnswer8" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
