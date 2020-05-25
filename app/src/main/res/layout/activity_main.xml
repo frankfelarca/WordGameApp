@@ -27,4 +27,15 @@
         app:layout_constraintVertical_bias="0.428"
         app:srcCompat="@drawable/litaf" />
 
+    <TextView
+        android:id="@+id/tvTitleText"
+        android:layout_width="262dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="40dp"
+        android:text="WORD APP GAME"
+        android:textSize="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

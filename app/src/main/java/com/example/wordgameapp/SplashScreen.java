@@ -13,7 +13,7 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        MediaPlayer musicPlayer = MediaPlayer.create(this, R.raw.terrariajourneysendrelogic1);
+        MediaPlayer musicPlayer = MediaPlayer.create(this, R.raw.terrariajourneysendrelogic2);
         musicPlayer.start();
 
         new Handler().postDelayed(new Runnable() {
