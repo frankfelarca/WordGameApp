@@ -18,12 +18,12 @@
         tools:srcCompat="@drawable/a" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvNameFrankFelarca"
         android:layout_width="186dp"
         android:layout_height="125dp"
         android:layout_marginStart="208dp"
         android:layout_marginTop="96dp"
-        android:text="Frank Joseph Felarca"
+        android:text=" "
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,12 +38,12 @@
         tools:srcCompat="@drawable/a" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvNameAronBelmonte"
         android:layout_width="168dp"
         android:layout_height="125dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="364dp"
-        android:text="John Aron Belmonte"
+        android:text=" "
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

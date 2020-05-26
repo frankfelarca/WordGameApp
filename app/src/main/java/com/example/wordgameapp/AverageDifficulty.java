@@ -13,14 +13,31 @@ import java.util.Random;
 
 public class AverageDifficulty extends AppCompatActivity {
 
-    TextView tvScore;
-    Button btn1 , btn2 , btn3 , btn4 , btn5 , btn6 , btn7 , btn8, btn9, btn10, btn11, btn12, btn13, btn14;
-    Chronometer chronometer;
-    Random random = new Random();
-    String[][] array;
-    String[] correctWords = new String[7];
-    String time;
-    int score;
+    private TextView tvScore;
+    private Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14;
+    private Chronometer chronometer;
+    private Random random = new Random();
+    final private String[][] arrayWords = {
+                                            {"Laptop", "Loptop"},
+                                            {"Bulldog", "Balldog"},
+                                            {"Cabinet", "Cabbinet"},
+                                            {"Electric", "Electrict"},
+                                            {"Suicide", "Suicyde"},
+                                            {"Vacuum", "Vaccum"},
+                                            {"Genocide", "Genocyde"},
+                                            {"Hanging", "Hangging"},
+                                            {"Wining", "Winiing"},
+                                            {"Elephant", "Elefant"},
+                                            {"Fallopian Tube", "Faloppian Tube"},
+                                            {"Pinnacle", "Pinaccle"},
+                                            {"Swift", "Shwift"},
+                                            {"Cinder", "Sinnder"},
+                                            {"Cyanide", "Cianyde"},
+                                            };
+    private String time;
+    final private int items = 7;
+    private int score;
+    private String[] correctWords = new String[items];
 
     @Override
     protected void onPause() {
@@ -183,7 +200,6 @@ public class AverageDifficulty extends AppCompatActivity {
                 btn12.setEnabled(false);
             }
         });
-
         btn13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -194,7 +210,7 @@ public class AverageDifficulty extends AppCompatActivity {
                 intent.putExtra("correctWords", correctWords);
                 intent.putExtra("time", time);
                 intent.putExtra("score", score);
-                intent.putExtra("total", 7);
+                intent.putExtra("total", items);
                 startActivity(intent);
                 finish();
             }
@@ -209,41 +225,21 @@ public class AverageDifficulty extends AppCompatActivity {
                 intent.putExtra("correctWords", correctWords);
                 intent.putExtra("time", time);
                 intent.putExtra("score", score);
-                intent.putExtra("total", 7);
+                intent.putExtra("total", items);
                 startActivity(intent);
                 finish();
             }
         });
 
         chronometer.start();
-        startGame();
 
-    }
-
-    private void startGame() {
-        array = new String[][]{
-                {"Laptop", "Loptop"},
-                {"Bulldog", "Balldog"},
-                {"Cabinet", "Cabbinet"},
-                {"Electric", "Electrict"},
-                {"Suicide", "Suicyde"},
-                {"Vacuum", "Vaccum"},
-                {"Genocide", "Genocyde"},
-                {"Hanging", "Hangging"},
-                {"Wining", "Winiing"},
-                {"Elephant", "Elefant"},
-                {"Fallopian Tube", "Faloppian Tube"},
-                {"Pinnacle", "Pinaccle"},
-                {"Swift", "Shwift"},
-                {"Cinder", "Sinnder"},
-                {"Cyanide", "Cianyde"},
-        };
         setButtonRandomText();
     }
 
+
     private void checkAnswer(Button x) {
         String str = x.getText().toString();
-        for(String[] i : array){
+        for(String[] i : arrayWords){
             if(i[0] == str){
                 score++;
                 tvScore.setText("Score: " + score);
@@ -252,23 +248,23 @@ public class AverageDifficulty extends AppCompatActivity {
     }
 
     private void setButtonRandomText() {
-        boolean[] isDone = {false, false, false, false, false, false, false, false, false, false, false, false, false, false};
+        boolean[] isDone = new boolean[items*2];
         Button[] buttonArray = {btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14};
         int randomNumber;
         int randomI;
         int counter = 0;
-        for(int i = 0; i < 7; i++){
+        for(int i = 0; i < items; i++){
             randomNumber = random.nextInt(2);
-            randomI = random.nextInt(14);
+            randomI = random.nextInt(items*2);
             if(isDone[randomI] == false){
                 if(randomNumber == 0){
-                    buttonArray[counter++].setText(array[randomI][0]);
-                    correctWords[i] = array[randomI][0];
-                    buttonArray[counter++].setText(array[randomI][1]);
+                    buttonArray[counter++].setText(arrayWords[randomI][0]);
+                    correctWords[i] = arrayWords[randomI][0];
+                    buttonArray[counter++].setText(arrayWords[randomI][1]);
                 }else{
-                    buttonArray[counter++].setText(array[randomI][1]);
-                    buttonArray[counter++].setText(array[randomI][0]);
-                    correctWords[i] = array[randomI][0];
+                    buttonArray[counter++].setText(arrayWords[randomI][1]);
+                    buttonArray[counter++].setText(arrayWords[randomI][0]);
+                    correctWords[i] = arrayWords[randomI][0];
                 }
                 isDone[randomI] = true;
             }else{
@@ -276,6 +272,4 @@ public class AverageDifficulty extends AppCompatActivity {
             }
         }
     }
-
-
 }

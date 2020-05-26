@@ -13,14 +13,24 @@ import java.util.Random;
 
 public class EasyDifficulty extends AppCompatActivity {
 
-    TextView tvScore;
-    Button btn1 , btn2 , btn3 , btn4 , btn5 , btn6 , btn7 , btn8;
-    Chronometer chronometer;
-    Random random = new Random();
-    String[][] arrayWords;
-    String[] correctWords = new String[4];
-    String time;
-    int score;
+    private TextView tvScore;
+    private Button btn1 , btn2 , btn3 , btn4 , btn5 , btn6 , btn7 , btn8;
+    private Chronometer chronometer;
+    private Random random = new Random();
+    private final String[][] arrayWords = {
+                                            {"rainbow", "rianbow"},
+                                            {"Lucid", "lusid"},
+                                            {"ball", "baal"},
+                                            {"mass", "mas"},
+                                            {"razor", "razer"},
+                                            {"fan", "faan"},
+                                            {"zipper", "ziper"},
+                                            {"testing", "testting"},
+                                            };
+    private String time;
+    private int score;
+    private int items = 4;
+    private String[] correctWords = new String[items];
 
     @Override
     protected void onPause() {
@@ -141,22 +151,8 @@ public class EasyDifficulty extends AppCompatActivity {
                 finish();
             }
         });
-
         chronometer.start();
-        startGame();
-    }
 
-    public void startGame(){
-        arrayWords = new String[][]{
-                {"cat", "caat"},
-                {"hotdog", "hatdog"},
-                {"ball", "bal"},
-                {"one", "oen"},
-                {"razor", "razer"},
-                {"fan", "faan"},
-                {"zipper", "ziper"},
-                {"car", "cer"},
-        };
         setButtonRandomText();
     }
 
@@ -171,15 +167,15 @@ public class EasyDifficulty extends AppCompatActivity {
     }
 
     public void setButtonRandomText(){
-        boolean[] isDone = {false, false, false, false, false, false, false, false};
+        boolean[] isDone = new boolean[items*2];
         Button[] buttonArray = {btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8};
         int randomNumber;
         int randomI;
         int counter = 0;
-        for(int i = 0; i < 4; i++){
+        for(int i = 0; i < items; i++){
             randomNumber = random.nextInt(2);
-            randomI = random.nextInt(8);
-            if(isDone[randomI] == false){
+            randomI = random.nextInt(items*2);
+            if(!isDone[randomI]){
                 if(randomNumber == 0){
                     buttonArray[counter++].setText(arrayWords[randomI][0]);
                     correctWords[i] = arrayWords[randomI][0];

@@ -13,15 +13,37 @@ import java.util.Random;
 
 public class HardDifficulty extends AppCompatActivity {
 
-    TextView tvScore;
-    Button btn1 , btn2 , btn3 , btn4 , btn5 , btn6 , btn7 , btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16,
-            btn17, btn18, btn19, btn20;
-    Chronometer chronometer;
-    Random random = new Random();
-    String[][] array;
-    String[] correctWords = new String[10];
-    String time;
-    int score;
+    private TextView tvScore;
+    private Button btn1 , btn2 , btn3 , btn4 , btn5 , btn6 , btn7 , btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16,
+                    btn17, btn18, btn19, btn20;
+    private Chronometer chronometer;
+    private Random random = new Random();
+    private String[][] arrayWords = {
+                                    {"Chlamydia", "Chlamidya"},
+                                    {"Handkerchief", "Handcherhief"},
+                                    {"Pronunciation", "Pronounciation"},
+                                    {"Intelligence ", "Inteligence"},
+                                    {"Misspell ", "Mispell"},
+                                    {"Pharaoh ", "Pharoah"},
+                                    {"Euthanasia", "Euthanacia"},
+                                    {"Extrajudicial", "Extrajudecial"},
+                                    {"Quietus", "Quietos"},
+                                    {"Seismology", "Sysmology"},
+                                    {"Australia", "Austrulia"},
+                                    {"Nausea", "Nuasea"},
+                                    {"Broccoli", "Brocolli"},
+                                    {"Aberration", "Abberation"},
+                                    {"Plethora", "Plathora"},
+                                    {"Requisition", "Requicision"},
+                                    {"Serendipity", "Serendepity"},
+                                    {"Conduit", "Conduite"},
+                                    {"Debauch", "Debuach"},
+                                    {"Constituent", "Constituet"},
+                                    };
+    private String time;
+    private int score;
+    private int items = 10;
+    private String[] correctWords = new String[items];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -283,38 +305,13 @@ public class HardDifficulty extends AppCompatActivity {
         });
 
         chronometer.start();
-        startGame();
-    }
 
-    private void startGame() {
-        array = new String[][]{
-                {"Chlamydia", "Chlamidya"},
-                {"Handkerchief", "Handcherhief"},
-                {"Pronunciation", "Pronounciation"},
-                {"Intelligence ", "Inteligence"},
-                {"Misspell ", "Mispell"},
-                {"Pharaoh ", "Pharoah"},
-                {"Euthanasia", "Euthanacia"},
-                {"Extrajudicial", "Extrajudecial"},
-                {"Quietus", "Quietos"},
-                {"Seismology", "Sysmology"},
-                {"Australia", "Austrulia"},
-                {"Nausea", "Nuasea"},
-                {"Broccoli", "Brocolli"},
-                {"Aberration", "Abberation"},
-                {"Plethora", "Plathora"},
-                {"Requisition", "Requicision"},
-                {"Serendipity", "Serendepity"},
-                {"Conduit", "Conduite"},
-                {"Debauch", "Debuach"},
-                {"Constituent", "Constituet"},
-        };
         setButtonRandomText();
     }
 
     private void checkAnswer(Button x) {
         String str = x.getText().toString();
-        for(String[] i : array){
+        for(String[] i : arrayWords){
             if(i[0] == str){
                 score++;
                 tvScore.setText("Score: " + score);
@@ -323,25 +320,24 @@ public class HardDifficulty extends AppCompatActivity {
     }
 
     private void setButtonRandomText() {
-        boolean[] isDone = {false, false, false, false, false, false, false, false, false, false, false, false, false, false,
-                            false, false, false, false, false, false};
+        boolean[] isDone = new boolean[items*2];
         Button[] buttonArray = {btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14,
                                 btn15, btn16, btn17, btn18, btn19, btn20};
         int randomNumber;
         int randomI;
         int counter = 0;
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < items; i++){
             randomNumber = random.nextInt(2);
-            randomI = random.nextInt(20);
+            randomI = random.nextInt(items*2);
             if(isDone[randomI] == false){
                 if(randomNumber == 0){
-                    buttonArray[counter++].setText(array[randomI][0]);
-                    correctWords[i] = array[randomI][0];
-                    buttonArray[counter++].setText(array[randomI][1]);
+                    buttonArray[counter++].setText(arrayWords[randomI][0]);
+                    correctWords[i] = arrayWords[randomI][0];
+                    buttonArray[counter++].setText(arrayWords[randomI][1]);
                 }else{
-                    buttonArray[counter++].setText(array[randomI][1]);
-                    buttonArray[counter++].setText(array[randomI][0]);
-                    correctWords[i] = array[randomI][0];
+                    buttonArray[counter++].setText(arrayWords[randomI][1]);
+                    buttonArray[counter++].setText(arrayWords[randomI][0]);
+                    correctWords[i] = arrayWords[randomI][0];
                 }
                 isDone[randomI] = true;
             }else{

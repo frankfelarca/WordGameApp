@@ -12,12 +12,14 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView tvTitle;
-    Button btnEasy, btnAverage, btnHard, btnAboutUs;
+    private TextView tvTitle;
+    private Button btnEasy, btnAverage, btnHard, btnAboutUs;
+    private MediaPlayer musicPlayer;
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        musicPlayer.stop();
         finish();
     }
 
@@ -26,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MediaPlayer musicPlayer = MediaPlayer.create(this, R.raw.terrariajourneysendrelogic2);
+        musicPlayer = MediaPlayer.create(this, R.raw.terrariajourneysendrelogic2);
         musicPlayer.start();
 
         tvTitle = findViewById(R.id.tvTitleText);

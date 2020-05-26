@@ -10,12 +10,12 @@ import android.widget.TextView;
 
 public class Results extends AppCompatActivity {
 
-    Button btnBack;
-    TextView tvAnswer1, tvAnswer2, tvAnswer3, tvAnswer4, tvAnswer5,  tvAnswer6, tvAnswer7, tvAnswer8, tvAnswer9, tvAnswer10, tvFinalScore, tvFinalTime;
-    int score;
-    int total;
-    String time;
-    String[] correctAnswers;
+    private Button btnBack;
+    private TextView tvAnswer1, tvAnswer2, tvAnswer3, tvAnswer4, tvAnswer5,  tvAnswer6, tvAnswer7, tvAnswer8, tvAnswer9, tvAnswer10, tvFinalScore, tvFinalTime;
+    private int score;
+    private int total;
+    private String time;
+    private String[] correctAnswers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
