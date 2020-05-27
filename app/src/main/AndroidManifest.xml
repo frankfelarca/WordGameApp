@@ -9,21 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/customTheme1">
-        <activity android:name=".HardDifficulty"></activity>
-        <activity android:name=".AverageDifficulty" />
-        <activity android:name=".Results" />
-        <activity android:name=".EasyDifficulty" />
-        <activity android:name=".CatalystFadeIn">
+        <activity android:name=".SplashScreenCustom">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".HardDifficulty" />
+        <activity android:name=".AverageDifficulty" />
+        <activity android:name=".Results" />
+        <activity android:name=".EasyDifficulty" />
         <activity android:name=".AboutUs" />
-        <activity
-            android:name=".SplashScreen"
-            android:theme="@style/SplashTheme" />
         <activity android:name=".MainActivity">
 
             <!-- <intent-filter> -->
