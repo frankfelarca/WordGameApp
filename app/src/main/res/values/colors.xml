@@ -6,6 +6,7 @@
     <color name="white">#ffffff</color>
 
     <!-- Customization Colors !-->
-    <color name="themeBackgroundColor">#37708f</color>
+    <color name="themeBackgroundColor">#1b517d</color>
     <color name="themeTextColor">#ccc6b6</color>
+    <color name="themeButtonColor">#de5f51</color>
 </resources>

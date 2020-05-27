@@ -15,6 +15,7 @@
         android:layout_marginBottom="495dp"
         android:text="Correct Spelling:"
         android:textSize="30sp"
+        android:fontFamily="@font/adventures"
         app:layout_constraintBottom_toTopOf="@+id/btnBack"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,6 +27,7 @@
         android:layout_marginTop="10dp"
         android:textAlignment="textEnd"
         android:textSize="24sp"
+        android:fontFamily="@font/adventures"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -35,6 +37,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="textEnd"
         android:textSize="24sp"
+        android:fontFamily="@font/adventures"
         app:layout_constraintStart_toStartOf="@+id/tvAnswer1"
         app:layout_constraintTop_toBottomOf="@+id/tvAnswer1" />
 
@@ -44,6 +47,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="textEnd"
         android:textSize="24sp"
+        android:fontFamily="@font/adventures"
         app:layout_constraintStart_toStartOf="@+id/tvAnswer2"
         app:layout_constraintTop_toBottomOf="@+id/tvAnswer2" />
 
@@ -53,6 +57,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="textEnd"
         android:textSize="24sp"
+        android:fontFamily="@font/adventures"
         app:layout_constraintStart_toStartOf="@+id/tvAnswer3"
         app:layout_constraintTop_toBottomOf="@+id/tvAnswer3" />
 
@@ -63,6 +68,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="36dp"
         android:text="TextView"
+        android:fontFamily="@font/adventures"
         android:textSize="36sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAnswer10" />
@@ -73,6 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="TextView"
+        android:fontFamily="@font/adventures"
         android:textSize="36sp"
         app:layout_constraintStart_toStartOf="@+id/tvFinalScore"
         app:layout_constraintTop_toBottomOf="@+id/tvFinalScore" />
@@ -84,6 +91,8 @@
         android:layout_marginStart="21dp"
         android:layout_marginEnd="16dp"
         android:text="BACK"
+        android:fontFamily="@font/adventures"
+        android:background="@drawable/roundedbutton"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

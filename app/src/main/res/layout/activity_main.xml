@@ -11,40 +11,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="29dp"
+        android:background="@drawable/roundedbutton"
+        android:fontFamily="@font/adventures"
         android:text="Hard"
         app:layout_constraintStart_toStartOf="@+id/btnAverage"
         app:layout_constraintTop_toBottomOf="@+id/btnAverage" />
+
 
     <Button
         android:id="@+id/btnAboutUs"
         android:layout_width="106dp"
         android:layout_height="62dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginTop="356dp"
+        android:background="@drawable/roundedbutton"
+        android:fontFamily="@font/adventures"
         android:text="About us"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="260dp"
-        android:layout_height="287dp"
-        android:layout_marginStart="84dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnAboutUs"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.428"
-        app:srcCompat="@drawable/litaf" />
-
+        app:layout_constraintEnd_toEndOf="@+id/tvTitleText"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleText" />
 
     <TextView
         android:id="@+id/tvTitleText"
-        android:layout_width="262dp"
-        android:layout_height="71dp"
+        android:layout_width="261dp"
+        android:layout_height="100dp"
         android:layout_marginStart="84dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="92dp"
+        android:fontFamily="@font/adventures"
         android:text="WORD APP GAME"
-        android:textSize="30dp"
+        android:textSize="34dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,8 +45,9 @@
         android:id="@+id/btnEasy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/roundedbutton"
+        android:fontFamily="@font/adventures"
         android:text="Easy"
         app:layout_constraintBottom_toTopOf="@+id/btnAverage"
         app:layout_constraintStart_toStartOf="@+id/btnAverage" />
@@ -62,10 +56,22 @@
         android:id="@+id/btnAverage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="67dp"
+        android:layout_marginTop="164dp"
+        android:background="@drawable/roundedbutton"
+        android:fontFamily="@font/adventures"
         android:text="Average"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleText" />
+
+    <TextView
+        android:id="@+id/tvBuildConfig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="396dp"
+        android:layout_marginEnd="124dp"
+        android:text="asdasdas"
+        app:layout_constraintEnd_toStartOf="@+id/btnAboutUs"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

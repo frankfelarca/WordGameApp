@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView tvTitle;
+    private TextView tvTitle, tvBuildVersion;
     private Button btnEasy, btnAverage, btnHard, btnAboutUs;
     private MediaPlayer musicPlayer;
     private int musicPosition;
@@ -31,13 +31,16 @@ public class MainActivity extends AppCompatActivity {
 
         musicPlayer = MediaPlayer.create(this, R.raw.terrariajourneysendrelogic2);
         musicPlayer.start();
+        musicPlayer.setLooping(true);
 
         tvTitle = findViewById(R.id.tvTitleText);
-        tvTitle.setTypeface(ResourcesCompat.getFont(this, R.font.adventures));
+        tvBuildVersion = findViewById(R.id.tvBuildConfig);
         btnAboutUs = findViewById(R.id.btnAboutUs);
         btnEasy = findViewById(R.id.btnEasy);
         btnAverage = findViewById(R.id.btnAverage);
         btnHard = findViewById(R.id.btnHard);
+
+        tvBuildVersion.setText("version: " + BuildConfig.VERSION_NAME);
 
         btnAboutUs.setOnClickListener(new View.OnClickListener() {
             @Override

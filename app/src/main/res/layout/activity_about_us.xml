@@ -15,7 +15,7 @@
         android:layout_marginTop="96dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/a" />
+        tools:srcCompat="@drawable/d2" />
 
     <TextView
         android:id="@+id/tvNameFrankFelarca"
@@ -24,6 +24,7 @@
         android:layout_marginStart="208dp"
         android:layout_marginTop="96dp"
         android:text=" "
+        android:fontFamily="@font/adventures"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,10 +33,10 @@
         android:layout_width="137dp"
         android:layout_height="120dp"
         android:layout_marginEnd="36dp"
-        android:layout_marginBottom="68dp"
+        android:layout_marginBottom="80dp"
         app:layout_constraintBottom_toTopOf="@+id/btnBack"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:srcCompat="@drawable/a" />
+        tools:srcCompat="@drawable/d1" />
 
     <TextView
         android:id="@+id/tvNameAronBelmonte"
@@ -44,15 +45,18 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="364dp"
         android:text=" "
+        android:fontFamily="@font/adventures"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnBack"
-        android:layout_width="106dp"
-        android:layout_height="59dp"
+        android:layout_width="105dp"
+        android:layout_height="45dp"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="44dp"
+        android:background="@drawable/roundedbutton"
+        android:fontFamily="@font/adventures"
         android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

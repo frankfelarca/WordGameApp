@@ -13,6 +13,7 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="76dp"
         android:textSize="30sp"
+        android:fontFamily="@font/adventures"
         app:layout_constraintStart_toStartOf="@+id/tvScore"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,6 +22,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
+        android:fontFamily="@font/adventures"
+        android:background="@drawable/roundedbutton"
         app:layout_constraintBaseline_toBaselineOf="@+id/btn2"
         app:layout_constraintEnd_toStartOf="@+id/btn2"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -33,6 +36,8 @@
         android:layout_marginTop="54dp"
         android:layout_marginEnd="11dp"
         android:text="Button"
+        android:fontFamily="@font/adventures"
+        android:background="@drawable/roundedbutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn1"
         app:layout_constraintTop_toBottomOf="@+id/tvScore" />
@@ -42,6 +47,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
+        android:fontFamily="@font/adventures"
+        android:background="@drawable/roundedbutton"
         app:layout_constraintBaseline_toBaselineOf="@+id/btn4"
         app:layout_constraintEnd_toStartOf="@+id/btn4"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -54,6 +61,8 @@
         android:layout_marginTop="43dp"
         android:layout_marginEnd="11dp"
         android:text="Button"
+        android:fontFamily="@font/adventures"
+        android:background="@drawable/roundedbutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn3"
         app:layout_constraintTop_toBottomOf="@+id/btn1" />
@@ -63,6 +72,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
+        android:fontFamily="@font/adventures"
+        android:background="@drawable/roundedbutton"
         app:layout_constraintBaseline_toBaselineOf="@+id/btn6"
         app:layout_constraintEnd_toStartOf="@+id/btn6"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -75,6 +86,8 @@
         android:layout_marginTop="45dp"
         android:layout_marginEnd="11dp"
         android:text="Button"
+        android:fontFamily="@font/adventures"
+        android:background="@drawable/roundedbutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn5"
         app:layout_constraintTop_toBottomOf="@+id/btn3" />
@@ -84,6 +97,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
+        android:fontFamily="@font/adventures"
+        android:background="@drawable/roundedbutton"
         app:layout_constraintBaseline_toBaselineOf="@+id/btn8"
         app:layout_constraintEnd_toStartOf="@+id/btn8"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -96,6 +111,8 @@
         android:layout_marginTop="47dp"
         android:layout_marginEnd="11dp"
         android:text="Button"
+        android:fontFamily="@font/adventures"
+        android:background="@drawable/roundedbutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn7"
         app:layout_constraintTop_toBottomOf="@+id/btn5" />
@@ -107,6 +124,7 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="17dp"
         android:text="Score: 0"
+        android:fontFamily="@font/adventures"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="@+id/btn2"
         app:layout_constraintTop_toBottomOf="@+id/chronometer" />

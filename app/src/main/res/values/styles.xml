@@ -6,10 +6,18 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/themeTextColor</item>
+<!--        <item name="android:textViewStyle">@style/adventureFont</item>-->
+<!--        <item name="android:buttonStyle">@style/adventureFont</item>-->
     </style>
 
     <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@drawable/background_splash</item>
+    </style>
+
+    <!--for fonts !-->
+    <style name="adventureFont" parent="android:Widget.TextView">
+<!--        <item name="android:fontFamily">@font/adventures</item>-->
     </style>
 
 </resources>
