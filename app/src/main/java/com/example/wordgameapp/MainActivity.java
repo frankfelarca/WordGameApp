@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvTitle;
     private Button btnEasy, btnAverage, btnHard, btnAboutUs;
     private MediaPlayer musicPlayer;
+    private int musicPosition;
 
     @Override
     protected void onDestroy() {
