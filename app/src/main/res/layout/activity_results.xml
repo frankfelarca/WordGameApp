@@ -107,6 +107,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="viewStart"
         android:textSize="24sp"
+        android:fontFamily="@font/adventures"
         app:layout_constraintStart_toStartOf="@+id/tvAnswer4"
         app:layout_constraintTop_toBottomOf="@+id/tvAnswer4" />
 
@@ -116,6 +117,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="viewStart"
         android:textSize="24sp"
+        android:fontFamily="@font/adventures"
         app:layout_constraintStart_toStartOf="@+id/tvAnswer5"
         app:layout_constraintTop_toBottomOf="@+id/tvAnswer5" />
 
@@ -125,6 +127,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="viewStart"
         android:textSize="24sp"
+        android:fontFamily="@font/adventures"
         app:layout_constraintStart_toStartOf="@+id/tvAnswer9"
         app:layout_constraintTop_toBottomOf="@+id/tvAnswer9" />
 
@@ -134,6 +137,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="viewStart"
         android:textSize="24sp"
+        android:fontFamily="@font/adventures"
         app:layout_constraintStart_toStartOf="@+id/tvAnswer7"
         app:layout_constraintTop_toBottomOf="@+id/tvAnswer7" />
 
@@ -143,6 +147,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="viewStart"
         android:textSize="24sp"
+        android:fontFamily="@font/adventures"
         app:layout_constraintStart_toStartOf="@+id/tvAnswer6"
         app:layout_constraintTop_toBottomOf="@+id/tvAnswer6" />
 
@@ -152,6 +157,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="viewStart"
         android:textSize="24sp"
+        android:fontFamily="@font/adventures"
         app:layout_constraintStart_toStartOf="@+id/tvAnswer8"
         app:layout_constraintTop_toBottomOf="@+id/tvAnswer8" />
 
