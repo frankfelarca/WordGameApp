@@ -1,7 +1,6 @@
 package com.example.wordgameapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.ResourcesCompat;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -76,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AboutUs.class);
                 shouldPlay = true;
+                musicPosition = musicPlayer.getCurrentPosition();
+                intent.putExtra("musicPosition", musicPosition);
                 startActivity(intent);
             }
         });
@@ -85,6 +86,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, EasyDifficulty.class);
                 shouldPlay = true;
+                musicPosition = musicPlayer.getCurrentPosition();
+                intent.putExtra("musicPosition", musicPosition);
                 startActivity(intent);
             }
         });
@@ -94,6 +97,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AverageDifficulty.class);
                 shouldPlay = true;
+                musicPosition = musicPlayer.getCurrentPosition();
+                intent.putExtra("musicPosition", musicPosition);
                 startActivity(intent);
             }
         });
@@ -103,6 +108,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, HardDifficulty.class);
                 shouldPlay = true;
+                musicPosition = musicPlayer.getCurrentPosition();
+                intent.putExtra("musicPosition", musicPosition);
                 startActivity(intent);
             }
         });

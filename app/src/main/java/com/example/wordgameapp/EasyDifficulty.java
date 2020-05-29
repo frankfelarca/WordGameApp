@@ -3,6 +3,7 @@ package com.example.wordgameapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +17,7 @@ public class EasyDifficulty extends AppCompatActivity {
     private TextView tvScore;
     private Button btn1 , btn2 , btn3 , btn4 , btn5 , btn6 , btn7 , btn8;
     private Chronometer chronometer;
+    MediaPlayer musicPlayer;
     private Random random = new Random();
     private final String[][] arrayWords = {
                                             {"rainbow", "rianbow"},
@@ -30,13 +32,32 @@ public class EasyDifficulty extends AppCompatActivity {
     private String time;
     private int score;
     private int items = 4;
+    private int musicPosition = 0;
     private String[] correctWords = new String[items];
 
     @Override
     protected void onPause() {
         super.onPause();
+        musicPosition = musicPlayer.getCurrentPosition();
+        musicPlayer.stop();
         finish();
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        musicPosition = musicPlayer.getCurrentPosition();
+        musicPlayer.stop();
+        finish();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        musicPlayer.seekTo(musicPosition);
+        musicPlayer.start();
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,6 +153,8 @@ public class EasyDifficulty extends AppCompatActivity {
                 intent.putExtra("time", time);
                 intent.putExtra("score", score);
                 intent.putExtra("total", 4);
+                musicPosition = musicPlayer.getCurrentPosition();
+                intent.putExtra("musicPosition", musicPosition);
                 startActivity(intent);
                 finish();
             }
@@ -147,12 +170,21 @@ public class EasyDifficulty extends AppCompatActivity {
                 intent.putExtra("time", time);
                 intent.putExtra("score", score);
                 intent.putExtra("total", 4);
+                musicPosition = musicPlayer.getCurrentPosition();
+                intent.putExtra("musicPosition", musicPosition);
                 startActivity(intent);
                 finish();
             }
         });
-        chronometer.start();
 
+        musicPlayer = MediaPlayer.create(this, R.raw.terrariajourneysendrelogic2);
+
+        Intent intent = getIntent();
+        musicPosition = intent.getIntExtra("musicPosition", 0);
+        musicPlayer.seekTo(musicPosition);
+        musicPlayer.start();
+
+        chronometer.start();
         setButtonRandomText();
     }
 

@@ -2,6 +2,9 @@ package com.example.wordgameapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,11 +14,30 @@ public class AboutUs extends AppCompatActivity {
 
     private Button btnBack;
     private TextView tvNameAronBelmonte, tvNameFrankFelarca;
+    private MediaPlayer musicPlayer;
+    private int musicPosition;
 
     @Override
     protected void onPause() {
         super.onPause();
+        musicPosition = musicPlayer.getCurrentPosition();
+        musicPlayer.stop();
         finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        musicPosition = musicPlayer.getCurrentPosition();
+        musicPlayer.stop();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        musicPlayer.seekTo(musicPosition);
+        musicPlayer.start();
     }
 
     @Override
@@ -33,6 +55,13 @@ public class AboutUs extends AppCompatActivity {
                 finish();
             }
         });
+
+        Intent intent = getIntent();
+        musicPosition = intent.getIntExtra("musicPosition", 0);
+
+        musicPlayer = MediaPlayer.create(this, R.raw.terrariajourneysendrelogic2);
+        musicPlayer.start();
+        musicPlayer.setLooping(true);
 
         tvNameFrankFelarca.setText("Frank Joseph M. Felarca");
         tvNameAronBelmonte.setText("John Aron Belmonte");

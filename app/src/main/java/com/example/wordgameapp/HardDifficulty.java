@@ -3,6 +3,7 @@ package com.example.wordgameapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +18,8 @@ public class HardDifficulty extends AppCompatActivity {
     private Button btn1 , btn2 , btn3 , btn4 , btn5 , btn6 , btn7 , btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16,
                     btn17, btn18, btn19, btn20;
     private Chronometer chronometer;
+    private MediaPlayer musicPlayer;
+    private int musicPosition = 0;
     private Random random = new Random();
     private String[][] arrayWords = {
                                     {"Chlamydia", "Chlamidya"},
@@ -44,6 +47,29 @@ public class HardDifficulty extends AppCompatActivity {
     private int score;
     private int items = 10;
     private String[] correctWords = new String[items];
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        musicPosition = musicPlayer.getCurrentPosition();
+        musicPlayer.stop();
+        finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        musicPosition = musicPlayer.getCurrentPosition();
+        musicPlayer.stop();
+        finish();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        musicPlayer.seekTo(musicPosition);
+        musicPlayer.start();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -284,6 +310,8 @@ public class HardDifficulty extends AppCompatActivity {
                 intent.putExtra("time", time);
                 intent.putExtra("score", score);
                 intent.putExtra("total", 10);
+                musicPosition = musicPlayer.getCurrentPosition();
+                intent.putExtra("musicPlayer", musicPosition);
                 startActivity(intent);
                 finish();
             }
@@ -299,10 +327,18 @@ public class HardDifficulty extends AppCompatActivity {
                 intent.putExtra("time", time);
                 intent.putExtra("score", score);
                 intent.putExtra("total", 10);
+                musicPosition = musicPlayer.getCurrentPosition();
+                intent.putExtra("musicPosition", musicPosition);
                 startActivity(intent);
                 finish();
             }
         });
+        musicPlayer = MediaPlayer.create(this, R.raw.terrariajourneysendrelogic2);
+
+        Intent intent = getIntent();
+        musicPosition = intent.getIntExtra("musicPosition", 0);
+        musicPlayer.seekTo(musicPosition);
+        musicPlayer.start();
 
         chronometer.start();
 

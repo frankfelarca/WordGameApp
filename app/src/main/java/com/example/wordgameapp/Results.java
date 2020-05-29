@@ -3,6 +3,7 @@ package com.example.wordgameapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +17,25 @@ public class Results extends AppCompatActivity {
     private int total;
     private String time;
     private String[] correctAnswers;
+    private int musicPosition;
+    private MediaPlayer musicPlayer;
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        musicPosition = musicPlayer.getCurrentPosition();
+        musicPlayer.stop();
+        finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        musicPosition = musicPlayer.getCurrentPosition();
+        musicPlayer.stop();
+        finish();
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +63,13 @@ public class Results extends AppCompatActivity {
             }
         });
 
+        musicPlayer = MediaPlayer.create(this, R.raw.terrariajourneysendrelogic2);
+
         Intent intent = getIntent();
+        musicPosition = intent.getIntExtra("musicPosition", 0);
+        musicPlayer.seekTo(musicPosition);
+        musicPlayer.start();
+
         score = intent.getIntExtra("score", 0);
         time = intent.getStringExtra("time");
         total = intent.getIntExtra("total", 0);
