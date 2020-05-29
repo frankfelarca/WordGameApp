@@ -15,13 +15,39 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvTitle, tvBuildVersion;
     private Button btnEasy, btnAverage, btnHard, btnAboutUs;
     private MediaPlayer musicPlayer;
-    private int musicPosition;
+    public static boolean shouldPlay = false;
+    public int musicPosition;
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         musicPlayer.stop();
         finish();
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (!shouldPlay) {
+            musicPlayer.pause();
+            musicPosition = musicPlayer.getCurrentPosition();
+        }
+    }
+    @Override
+    protected void onResume(){
+        super.onResume();
+        if (musicPlayer != null) {
+            musicPlayer.seekTo(musicPosition);
+            musicPlayer.start();
+            musicPlayer.setLooping(true);
+        }
+    }
+    @Override
+    protected void onPause(){
+        super.onPause();
+        if (shouldPlay) {
+            musicPlayer.pause();
+            musicPosition = musicPlayer.getCurrentPosition();
+        }
     }
 
     @Override
@@ -46,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AboutUs.class);
+                shouldPlay = true;
                 startActivity(intent);
             }
         });
@@ -54,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, EasyDifficulty.class);
+                shouldPlay = true;
                 startActivity(intent);
             }
         });
@@ -62,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AverageDifficulty.class);
+                shouldPlay = true;
                 startActivity(intent);
             }
         });
@@ -70,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, HardDifficulty.class);
+                shouldPlay = true;
                 startActivity(intent);
             }
         });
