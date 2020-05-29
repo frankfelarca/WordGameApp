@@ -57,7 +57,5 @@ public class Results extends AppCompatActivity {
 
         tvFinalScore.setText("Final Score: " + score + "/" + total);
         tvFinalTime.setText("Final Time: " + time);
-
-
     }
 }

@@ -24,14 +24,7 @@ public class MainActivity extends AppCompatActivity {
         musicPlayer.stop();
         finish();
     }
-    @Override
-    protected void onStop() {
-        super.onStop();
-        if (!shouldPlay) {
-            musicPlayer.pause();
-            musicPosition = musicPlayer.getCurrentPosition();
-        }
-    }
+
     @Override
     protected void onResume(){
         super.onResume();
@@ -41,6 +34,16 @@ public class MainActivity extends AppCompatActivity {
             musicPlayer.setLooping(true);
         }
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (!shouldPlay) {
+            musicPlayer.pause();
+            musicPosition = musicPlayer.getCurrentPosition();
+        }
+    }
+
     @Override
     protected void onPause(){
         super.onPause();

@@ -11,9 +11,10 @@
         android:id="@+id/imageView"
         android:layout_width="130dp"
         android:layout_height="153dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="80dp"
         android:src="@drawable/d2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.149"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@drawable/d2" />
@@ -22,44 +23,49 @@
         android:id="@+id/tvNameFrankFelarca"
         android:layout_width="186dp"
         android:layout_height="125dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="24dp"
         android:fontFamily="@font/adventures"
         android:text=" "
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintStart_toEndOf="@+id/imageView" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.896"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="137dp"
         android:layout_height="120dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="156dp"
+        android:layout_marginBottom="152dp"
         android:src="@drawable/d1"
-        app:layout_constraintStart_toStartOf="@+id/tvNameFrankFelarca"
-        app:layout_constraintTop_toBottomOf="@+id/tvNameFrankFelarca"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintStart_toEndOf="@+id/tvNameAronBelmonte"
         tools:srcCompat="@drawable/d1" />
 
     <TextView
         android:id="@+id/tvNameAronBelmonte"
         android:layout_width="168dp"
         android:layout_height="125dp"
-        android:layout_marginTop="148dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="152dp"
         android:fontFamily="@font/adventures"
         android:text=" "
-        app:layout_constraintEnd_toStartOf="@+id/tvNameFrankFelarca"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.172"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnBack"
         android:layout_width="105dp"
         android:layout_height="45dp"
-        android:layout_marginEnd="48dp"
         android:layout_marginBottom="44dp"
         android:background="@drawable/roundedbutton"
         android:fontFamily="@font/adventures"
         android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.862"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

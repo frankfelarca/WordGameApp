@@ -6,38 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <Button
         android:id="@+id/btnHard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="29dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/roundedbutton"
         android:fontFamily="@font/adventures"
         android:text="Hard"
-        app:layout_constraintStart_toStartOf="@+id/btnAverage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnAverage" />
-
 
     <Button
         android:id="@+id/btnAboutUs"
         android:layout_width="106dp"
         android:layout_height="62dp"
-        android:layout_marginTop="356dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/roundedbutton"
         android:fontFamily="@font/adventures"
         android:text="About us"
-        app:layout_constraintEnd_toEndOf="@+id/tvTitleText"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitleText" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/tvTitleText"
         android:layout_width="261dp"
         android:layout_height="100dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="80dp"
         android:fontFamily="@font/adventures"
         android:text="WORD APP GAME"
         android:textSize="34dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,33 +47,34 @@
         android:id="@+id/btnEasy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/roundedbutton"
         android:fontFamily="@font/adventures"
         android:text="Easy"
-        app:layout_constraintBottom_toTopOf="@+id/btnAverage"
-        app:layout_constraintStart_toStartOf="@+id/btnAverage" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleText" />
 
     <Button
         android:id="@+id/btnAverage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="164dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/roundedbutton"
         android:fontFamily="@font/adventures"
         android:text="Average"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitleText" />
+        app:layout_constraintTop_toBottomOf="@+id/btnEasy" />
 
     <TextView
         android:id="@+id/tvBuildConfig"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="396dp"
-        android:layout_marginEnd="124dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="16dp"
         android:text="asdasdas"
-        app:layout_constraintEnd_toStartOf="@+id/btnAboutUs"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitleText" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

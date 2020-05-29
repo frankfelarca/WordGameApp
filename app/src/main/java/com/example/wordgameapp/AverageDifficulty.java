@@ -236,7 +236,6 @@ public class AverageDifficulty extends AppCompatActivity {
         setButtonRandomText();
     }
 
-
     private void checkAnswer(Button x) {
         String str = x.getText().toString();
         for(String[] i : arrayWords){
